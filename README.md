@@ -11,4 +11,8 @@ component file name should be similar to custom html tag
 layout.blade.php -> x-layout
 $slot use to view the page in the template
 
+4
+nav use same custom component file
+nav-link.blade.php -> x-nav-link
 
+pages send as params objects: $attributes
