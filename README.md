@@ -16,3 +16,4 @@ nav use same custom component file
 nav-link.blade.php -> x-nav-link
 
 pages send as params objects: $attributes
+
