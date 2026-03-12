@@ -32,3 +32,22 @@ Request to make new table
 4-update the content as required
 5-Execute the update
 //php artisan migrate
+
+6
+Eloquent ORM
+import eloquent to class: use Illuminate\Database\Eloquent\Model;
+extends reuqired class with Model: class name extends Model{}
+class name and table name has converssion;
+Table comments - class Comment, posts - Post
+
+create new object class
+php artisan make:model
+
+crate migration table file
+//php artisan make:model Post -m
+then do changes and add to database
+//php artisan migrate
+
+
+
+
