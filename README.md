@@ -53,7 +53,7 @@ factories
 ! generated data will fill in to database table
 
 use to generate fake/example data
-model class must implement 'HasFactory' tarit from Illuminate pakage.
+model class must implement 'HasFactory' tarit from Illuminate pakagegi.
 
 factory class file can find in Database\factories\UserFactory.php
 required columns must be the same with class and database table.
@@ -64,7 +64,16 @@ required columns must be the same with class and database table.
 generate factory class
 //php artisan make:factory JobFactory
 
-8
+generate data with unverified(null) emails
+App\Models\User::factory(5)->unverified()->create();
+as same as, can make any field to any fixed value by setting column value in the factory class.
+admin => false
+
+and custome methods can call as same as unverified method to generate values for any table column.
+
+adding foreign id to a table
+in migration file
+$table->foreignIdFor(\App\Models\Employer::class);
 
 
 
