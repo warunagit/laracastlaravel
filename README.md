@@ -48,6 +48,25 @@ crate migration table file
 then do changes and add to database
 //php artisan migrate
 
+7
+factories
+! generated data will fill in to database table
+
+use to generate fake/example data
+model class must implement 'HasFactory' tarit from Illuminate pakage.
+
+factory class file can find in Database\factories\UserFactory.php
+required columns must be the same with class and database table.
+
+//App\Models\User::factory()->create();
+//App\Models\User::factory(8)->create();
+
+generate factory class
+//php artisan make:factory JobFactory
+
+8
+
+
 
 
 
