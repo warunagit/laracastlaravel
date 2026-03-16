@@ -75,7 +75,7 @@ adding foreign id to a table
 in migration file
 $table->foreignIdFor(\App\Models\Employer::class);
 
-
-
+Make a mmodel with factory
+php artisan make:model -m Employer -f
 
 
