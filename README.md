@@ -77,6 +77,7 @@ $table->foreignIdFor(\App\Models\Employer::class);
 
 Make a mmodel with factory
 php artisan make:model -m Employer -f
+php artisan make:model Tag -mf //migration with factory along
 
 8
 //eloquent relationships
@@ -95,5 +96,3 @@ public function jobs(){
 php artisan tinker
 $employer->jobs;
 $employer->jobs[0];
-
-
