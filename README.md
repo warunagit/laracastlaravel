@@ -78,4 +78,22 @@ $table->foreignIdFor(\App\Models\Employer::class);
 Make a mmodel with factory
 php artisan make:model -m Employer -f
 
+8
+//eloquent relationships
+class job access to employer by relationship
+job can has only one employer
+public function employer(){
+    return $this->belongsTo(Employer::class);
+}
+
+class employer access to job by relationship
+employer can has many jobs
+public function jobs(){
+    return $this->hasMany(Job::class);
+}
+
+php artisan tinker
+$employer->jobs;
+$employer->jobs[0];
+
 
