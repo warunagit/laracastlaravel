@@ -96,3 +96,19 @@ public function jobs(){
 php artisan tinker
 $employer->jobs;
 $employer->jobs[0];
+
+9
+Pagination
+
+make pagination pages style-able
+php artisan vendor:publish
+
+limit pagination per page, in routes\web.php
+Route::get('/jobs', function () {
+    $jobs = Job::with('employer')->paginate(3);
+
+remove paginate page numbers, shows previous next buttons
+->simplePaginate(3);
+
+cursor based pagination
+->cursorPaginate(3);
