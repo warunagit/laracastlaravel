@@ -112,3 +112,25 @@ remove paginate page numbers, shows previous next buttons
 
 cursor based pagination
 ->cursorPaginate(3);
+
+10
+Database seeding
+populate data into tables while generate classes through migration files create
+
+related files have generated in the folder of,
+database\seeders
+
+manual seed
+php artisan db:seed
+
+seed while migration
+php artisan migrate:fresh --seed
+
+create seeder class
+php artisan make:seeder
+
+delete all data and regenerate database and data using seedrer
+php artisan migrate:fresh --seed
+
+delete all data and regenerate database
+php artisan migrate:fresh
