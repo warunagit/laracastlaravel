@@ -134,3 +134,12 @@ php artisan migrate:fresh --seed
 
 delete all data and regenerate database
 php artisan migrate:fresh
+
+seed only specified table through a seeder class
+php artisan db:seed --class=JobSeeder
+
+11
+CSRF-Cross Site Request Forgery
+
+in routes, wildcard selecters must go to bottom to prevent similar fixed url conflicts.
+
