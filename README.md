@@ -2,6 +2,8 @@
 php artisan serve
 host the project in localhost
 
+in routes, wildcard selecters must go to bottom to prevent similar fixed url conflicts.
+
 2
 to send data from route to page, use array
 routes/web.php
@@ -140,6 +142,8 @@ php artisan db:seed --class=JobSeeder
 
 11
 CSRF-Cross Site Request Forgery
+related to forms and data submission
+solve by tokenizing each request using a hidden input token field
 
-in routes, wildcard selecters must go to bottom to prevent similar fixed url conflicts.
+add @csrf tag immediatly after the <form> tag
 
