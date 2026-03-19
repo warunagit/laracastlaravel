@@ -204,4 +204,5 @@ all validations
 https://laravel.com/docs/validation
 
 13
-
+Data update-delete Operations
+direct to the edit page with eloquent data object by router
