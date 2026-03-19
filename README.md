@@ -218,3 +218,30 @@ can use form attribute with form id
 14
 routes arranging
 $id replace by Job object
+
+or
+controller class
+php artisan make:controller -> empty
+file can find in app
+\http\controllers\JobController.php
+
+controller class contains just all request handling functions from route file
+
+or
+route listing
+php artisan route:list --except-vendor
+
+or
+Grouping by controller class
+
+or
+Route resource
+Route::resource('jobs', JobController::class);
+
+can filter requests by adding arrays: only and except
+Route::resource('jobs', JobController::class,[
+    'only'=>['index','show','create','store']
+]);
+Route::resource('jobs', JobController::class,[
+    'except'=>['edit']
+]);

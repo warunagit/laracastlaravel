@@ -29,7 +29,7 @@
                                 <label class="block text-gray-800 font-bold mb-2" for="salary">
                                     Salary
                                 </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="salary" type="number" placeholder="$2,500" name="salary"
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="salary" type="number" name="salary"
                                 value="{{ $job->salary }}"
                                 required>
 
