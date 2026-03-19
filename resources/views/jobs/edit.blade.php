@@ -5,6 +5,7 @@
 
     <form method="POST" action="/jobs/{{ $job->id }}">
         @csrf
+        @method('PATCH')
 
         <div class="container mx-auto p4-10">
             <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-xl">
@@ -38,18 +39,30 @@
 
                             </div>
 
-                            <div class="mb-6 justify-self-end ">
-                                <a href="/jobs/{{ $job->id }}" class=" text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-5">
-                                    Cancel
-                                </a>
-                                <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                                    Update
-                                </button>
+                            <div class="flex justify-between">
+                                <div class="w-1/2">
+                                    <button form="delete-form" class=" text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-5 bg-red-500">
+                                        Delete
+                                    </button>
+                                </div>
+                                <div class="flex justify-end w-1/2">
+                                    <a href="/jobs/{{ $job->id }}" class=" text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-5">
+                                        Cancel
+                                    </a>
+                                    <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                        Update
+                                    </button>
+                                </div>
                             </div>
 
                     </div>
                 </div>
             </div>
         </div>
+    </form>
+
+    <form method="POST" action="/jobs/{{ $job->id }}" class="hidden" id="delete-form">
+        @csrf
+        @method('DELETE')
     </form>
 </x-layout>

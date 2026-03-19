@@ -206,3 +206,13 @@ https://laravel.com/docs/validation
 13
 Data update-delete Operations
 direct to the edit page with eloquent data object by router
+
+use by PATCH, DESTROY methods
+most frameworks have inbuilt feature
+in laravel, use derectives @method('POST') with form method
+
+mutiple forms
+if element to submit in another form, but in another form, 
+can use form attribute with form id
+
+
