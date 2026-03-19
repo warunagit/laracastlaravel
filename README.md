@@ -215,4 +215,6 @@ mutiple forms
 if element to submit in another form, but in another form, 
 can use form attribute with form id
 
-
+14
+routes arranging
+$id replace by Job object
