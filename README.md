@@ -171,4 +171,14 @@ or
 to specify table columns to protect, should notify in guarded array
 protected $guarded = [];
 
+12
+form valdation
+
+button component in views/components/button.blade.php
+<a {{ $attributes->merge(['class'=>"inline-flex"]) }}>{{ $slot }}</a>
+button component use in page
+<x-button href="/jobs/create">Create Job</x-button>
+
+
+
 
