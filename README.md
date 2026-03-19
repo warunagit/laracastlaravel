@@ -47,7 +47,8 @@ php artisan make:model
 
 crate migration table file
 //php artisan make:model Post -m
-then do changes and add to database
+
+do changes and add to database
 //php artisan migrate
 
 7
@@ -77,7 +78,7 @@ adding foreign id to a table
 in migration file
 $table->foreignIdFor(\App\Models\Employer::class);
 
-Make a mmodel with factory
+Make a model with factory
 php artisan make:model -m Employer -f
 php artisan make:model Tag -mf //migration with factory along
 
@@ -143,7 +144,31 @@ php artisan db:seed --class=JobSeeder
 11
 CSRF-Cross Site Request Forgery
 related to forms and data submission
-solve by tokenizing each request using a hidden input token field
+solve by tokenizing each request using injecting a hidden input token field
 
 add @csrf tag immediatly after the <form> tag
+
+view all request data in route file
+Route::post('/jobs',function (){
+    dd(request()->all());
+
+see specified request data field
+request('title')
+
+sending form data
+Route::post('/jobs', function (){
+    Job::create([
+        'title'=>request('title'),
+
+results in Decending order
+Route::get('/jobs', function () {
+    $jobs = Job::with('employer')->latest()->simplePaginate(5);
+
+in object class..
+to spcify table columns to use, should notify in fillable array
+//protected $fillable = ['employer_id','title','salary'];
+or
+to specify table columns to protect, should notify in guarded array
+protected $guarded = [];
+
 
