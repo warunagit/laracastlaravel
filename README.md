@@ -179,6 +179,29 @@ button component in views/components/button.blade.php
 button component use in page
 <x-button href="/jobs/create">Create Job</x-button>
 
+For required input fields;
+browser based validation add tag: required
+or
+server based validation: validate through router file 
+Route::post('/jobs', function (){
+    request()->validate([
+        'title'=>['required','min:3'],
+        'name'=>['required','min:3']
+    ]);
+and; show errors..
+As a list of errors, in corresponded blade file
+@if($errors->any())
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+or
+single error directives below the correspnded form field
+@error('title')
+<p class="text-xs text-red-500 text-semibold mt-1">{{ $message }}</p>
+@enderror
 
+all validations
+https://laravel.com/docs/validation
 
+13
 

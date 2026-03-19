@@ -28,6 +28,11 @@ Route::get('/jobs/create', function () {
 });
 
 Route::post('/jobs', function (){
+    request()->validate([
+        'title'=>['required','min:3'],
+        'salary'=>['required','min:3']
+    ]);
+
     Job::create([
         'title'=>request('title'),
         'salary'=>request('salary'),
