@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
 
 class RegisteredUserController extends Controller
 {
@@ -14,21 +12,21 @@ class RegisteredUserController extends Controller
     }
 
     public function store(){
+        //dd(request()->all());
         //validate
-        $validatesattributes = request([
+        $validatesattributes = request()->validate([
             'first_name'=>['required'],
             'last_name'=>['required'],
             'email'=>['required','email'],
-            'password'=>['required','min:6', 'confirmed'],
-            'created_at' => \Carbon\Carbon::now()->timestamp,
-            'updated_at' => \Carbon\Carbon::now()->timestamp,
+            'password'=>['required'],
+            // 'created_at' => \Carbon\Carbon::now()->timestamp,
+            // 'updated_at' => \Carbon\Carbon::now()->timestamp
         ]);
-        // ->validate([
 
-        // ]);
-
+        //dd($validatesattributes);
         //create the user
         $user = User::create($validatesattributes);
+
 
         //login
         Auth::login($user);
