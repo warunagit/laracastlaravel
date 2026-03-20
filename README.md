@@ -248,3 +248,11 @@ Route::resource('jobs', JobController::class,[
 Route::resource('jobs', JobController::class,[
     'except'=>['edit']
 ]);
+
+15
+authentication
+
+authentication status verify with the directive: 
+if registered: @auth
+if guest: @guest
+
