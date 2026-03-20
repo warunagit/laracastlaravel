@@ -12,44 +12,24 @@
                     <div class="w-full px-6 py-8 md:p-8">
                         <h2 class="text-2xl font-bold text-gray-800">Create a New Job</h2>
                         <p class="mt-4 text-gray-600">Please fill out the form below to complete your purchase.</p>
+
                             <div class="mb-6">
-                                <label class="block text-gray-800 font-bold mb-2" for="title">
-                                    Title
-                                </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="John Doe" name="title" required>
-
-                                @error('title')
-                                    <p class="text-xs text-red-500 text-semibold mt-1">{{ $message }}</p>
-                                @enderror
-
+                                <x-form-field>
+                                    <x-form-label for="title">Title</x-form-label>
+                                    <x-form-input name="title" id="title" type="text" placeholder="CEO" required/>
+                                    <x-form-error name="title"/>
+                                </x-form-field>
                             </div>
 
                             <div class="mb-6">
-                                <label class="block text-gray-800 font-bold mb-2" for="salary">
-                                    Salary
-                                </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="salary" type="number" placeholder="$2,500" name="salary" required>
-
-                                @error('salary')
-                                    <p class="text-xs text-red-500 text-semibold mt-1">{{ $message }}</p>
-                                @enderror
-
+                                <x-form-field>
+                                    <x-form-label for="salary">Salary</x-form-label>
+                                    <x-form-input name="salary" id="salary" placeholder="2500" type="number" required/>
+                                    <x-form-error name="salary"/>
+                                </x-form-field>
                             </div>
 
-
-                                {{-- @if($errors->any())
-                                    <div class="mb-6">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li class="text-red-500">{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif --}}
-
-                            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                                Submit
-                            </button>
+                            <x-form-submit-button>Save</x-form-submit-button>
                     </div>
                 </div>
             </div>

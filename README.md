@@ -1,3 +1,6 @@
+composer global require laravel/installer
+laravel new appname
+
 1
 php artisan serve
 host the project in localhost
@@ -238,7 +241,7 @@ or
 Route resource
 Route::resource('jobs', JobController::class);
 
-can filter requests by adding arrays: only and except
+can filter page/action requests by adding arrays: only and except
 Route::resource('jobs', JobController::class,[
     'only'=>['index','show','create','store']
 ]);

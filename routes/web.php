@@ -8,3 +8,5 @@ Route::view('/','home');
 Route::view('/contact','contact');
 
 Route::resource('jobs', JobController::class);
+
+Route::get('/register', [RegisterUserController::class,'create']);
