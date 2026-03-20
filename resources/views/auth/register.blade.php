@@ -13,16 +13,16 @@
 
                             <div class="mb-6">
                                 <x-form-field>
-                                    <x-form-label for="firstname">First Name</x-form-label>
-                                    <x-form-input name="firstname" id="firstname" type="text" placeholder="first name" required/>
-                                    <x-form-error name="firstname"/>
+                                    <x-form-label for="first_name">First Name</x-form-label>
+                                    <x-form-input name="first_name" id="first_name" type="text" placeholder="first_name" required/>
+                                    <x-form-error name="first_name"/>
                                 </x-form-field>
                             </div>
                             <div class="mb-6">
                                 <x-form-field>
-                                    <x-form-label for="lastname">Last Name</x-form-label>
-                                    <x-form-input name="lastname" id="lastname" type="text" placeholder="last name" required/>
-                                    <x-form-error name="lastname"/>
+                                    <x-form-label for="last_name">Last Name</x-form-label>
+                                    <x-form-input name="last_name" id="last_name" type="text" placeholder="last_name" required/>
+                                    <x-form-error name="last_name"/>
                                 </x-form-field>
                             </div>
                             <div class="mb-6">
