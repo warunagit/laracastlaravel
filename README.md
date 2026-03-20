@@ -259,3 +259,6 @@ if guest: @guest
 'password'=>['required',Password::min(5)->letters()->numbers()]
 default()
 
+inline form expressions to view old data
+:value="old('email')"
+

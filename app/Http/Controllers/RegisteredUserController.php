@@ -12,21 +12,16 @@ class RegisteredUserController extends Controller
     }
 
     public function store(){
-        //dd(request()->all());
         //validate
         $validatesattributes = request()->validate([
             'first_name'=>['required'],
             'last_name'=>['required'],
             'email'=>['required','email'],
-            'password'=>['required'],
-            // 'created_at' => \Carbon\Carbon::now()->timestamp,
-            // 'updated_at' => \Carbon\Carbon::now()->timestamp
+            'password'=>['required','min:6','required']
         ]);
 
-        //dd($validatesattributes);
         //create the user
         $user = User::create($validatesattributes);
-
 
         //login
         Auth::login($user);
