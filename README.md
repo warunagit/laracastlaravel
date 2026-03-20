@@ -256,3 +256,6 @@ authentication status verify with the directive:
 if registered: @auth
 if guest: @guest
 
+'password'=>['required',Password::min(5)->letters()->numbers()]
+default()
+
