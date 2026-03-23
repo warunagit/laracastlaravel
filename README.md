@@ -262,3 +262,60 @@ default()
 inline form expressions to view old data
 :value="old('email')"
 
+16
+Authorization
+----------need v23 again----
+
+---1 Inline
+check user not logged in
+if(Auth::guest()){
+    return redirect('/login');
+}
+check user is has no relationship
+JobController.php
+if($job->employer->user->isNot(Auth::user())){
+    abort(403);
+}
+return view('jobs.edit',['job'=>$job]);
+
+---2 Gates
+AppServiceProvider.php-to access from anywhere in app
+Gate::define('edit-job', function(User $user, Job $job){
+    return $job->employer->user->is($user);
+});
+JobController.php
+if(Auth::guest()){
+    return redirect('/login');
+}
+Gate::authorize('edit-job', $job);
+return view('jobs.edit',['job'=>$job]);
+
+---Can
+show.blade.php
+@can('edit-job',$job)
+        <p class="mt-6">
+            <x-button href="/jobs/{{ $job->id }}/edit">Edit Job</x-button>
+        </p>
+    @endcan
+
+---Middleware
+To prevent gate implementation write everywhere,
+it can implement in route level
+
+implement after route file redirection
+Route::post('/jobs',[JobController::class,'edit'])->middleware('auth);
+Route::get('/jobs/{job}/edit',[JobController::class,'edit'])->middleware('auth')->can('edit-job',$job);
+Route::get('/jobs/{job}/edit',[JobController::class,'create'])->name('login');
+
+--Policies
+connected to middleware process
+
+policies connected to eloquent models
+php artisan make:policy
+name->JobPolicy
+connected to->Job
+
+policies can find under \app\Policies
+
+17
+send email
