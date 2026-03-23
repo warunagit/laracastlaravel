@@ -299,23 +299,12 @@ show.blade.php
     @endcan
 
 ---Middleware
-To prevent gate implementation write everywhere,
-it can implement in route level
-
-implement after route file redirection
-Route::post('/jobs',[JobController::class,'edit'])->middleware('auth);
-Route::get('/jobs/{job}/edit',[JobController::class,'edit'])->middleware('auth')->can('edit-job',$job);
-Route::get('/jobs/{job}/edit',[JobController::class,'create'])->name('login');
-
---Policies
-connected to middleware process
-
-policies connected to eloquent models
-php artisan make:policy
-name->JobPolicy
-connected to->Job
-
-policies can find under \app\Policies
+---Policy
+these methods are for Router file based authentication
+v23 12.03 onwords
 
 17
 send email
+php artisan make:mail
+configurations are in
+config\mail
