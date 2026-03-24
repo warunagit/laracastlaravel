@@ -308,3 +308,7 @@ send email
 php artisan make:mail
 configurations are in
 config\mail
+
+https://mailtrap.io/
+nojet71521@isfew.com
+Temppass123##
