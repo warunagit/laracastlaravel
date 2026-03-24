@@ -312,3 +312,22 @@ config\mail
 https://mailtrap.io/
 nojet71521@isfew.com
 Temppass123##
+
+env file mail section update according to mailtrap api
+
+send email when job create
+ Mail::to($job->employer->user)->send(
+    new JobPosted($job)
+);
+
+18 Queue
+configuerations are in config\queue.php
+
+processes send to background worker.
+Mail::to($job->employer->user)->queue(...
+
+but, worker should force to start.
+php artisan queue:work
+
+make a job
+php artisan make:job

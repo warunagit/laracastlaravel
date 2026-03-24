@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('test',function (){
-    Mail::to('waruna@gmail.com')->send(new JobPosted());
+    dispatch(function(){
+        logger('hello from queue');
+    })->delay(5);
     return 'Done';
 });
 
