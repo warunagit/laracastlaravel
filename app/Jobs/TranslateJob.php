@@ -17,6 +17,6 @@ class TranslateJob implements ShouldQueue{
         AI::translate($this->jobListing->description, 'spanish');
         */
 
-        logger(['translating..',$this->jobListing->title, 'to Spanish']);
+        logger('translating..',[$this->jobListing->title, 'to Spanish']);
     }
 }

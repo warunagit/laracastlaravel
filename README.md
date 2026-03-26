@@ -335,4 +335,20 @@ php artisan make:job -> TranslateJob
 allways, queue loads in to memory
 restart the queue worker
 
+19 VITE
+need node.
+install node from website
 
+install dependancies from package.json
+npm install
+it will generate \vite.config.js
+
+css, js are located in \resources, not in \public
+so changes may not applied
+
+run the development
+npm run dev
+
+both php and dev servives should run together
+php artisan serve
+npm run dev

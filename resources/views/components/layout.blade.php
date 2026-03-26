@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Home</title>
+    @vite(['resources/css/app.css'])
 </head>
 <body style="h-full">
     <nav class="relative bg-gray-800">
