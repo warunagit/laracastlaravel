@@ -330,4 +330,9 @@ but, worker should force to start.
 php artisan queue:work
 
 make a job
-php artisan make:job
+php artisan make:job -> TranslateJob
+
+allways, queue loads in to memory
+restart the queue worker
+
+
